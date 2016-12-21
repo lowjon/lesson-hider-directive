@@ -12,6 +12,7 @@ angular.module('directivePractice')
         $scope.getSchedule = lessonService.getSchedule();
       },
       link: function (scope, element, attributes) {
+        var checked =false;
         scope.getSchedule.then(function (response) {
           scope.schedule = response.data;
 
@@ -19,11 +20,24 @@ angular.module('directivePractice')
             if (scheduleDay.lesson === scope.lesson){
               element.css('text-decoration','line-through');
               scope.lessonDay = scheduleDay.weekday;
-              scope.checked = true;
+              checked = true;
               return;
             }
           });
         });
+        scope.strike= () => {
+          if(checked){
+            element.css('text-decoration','none');
+            checked = false;
+          }
+          else{
+            element.css('text-decoration','line-through');
+            checked = true;
+          }
+        }
+        scope.removeLesson = () => {
+          element.remove();
+        }
       }
 
 

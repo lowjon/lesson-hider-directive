@@ -12,21 +12,6 @@ angular.module('directivePractice')
       }
     }
 
-    // Trying to get the strikeout style to go away when we click the checkbox
-    $scope.isItStruckout = (check,lesson) => {
-      console.log(check,lesson)
-      if (check){
-        // element.removeAttr('text-decoration');
-        // document.getElementById(lesson).removeAttr('text-decoration');
-          document.getElementById()
 
-        console.log('here')
-        // return 'checked'
-      } else{
-        // element.addAttr('text-decoration','line-through');
-
-        // return ''
-      }
-    }
 
   });

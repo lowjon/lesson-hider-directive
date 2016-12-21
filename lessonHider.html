@@ -1,6 +1,8 @@
 
-<li id="{{lesson}}">{{lesson}}</li>
+<li >{{lesson}}
 <!-- <input ng-model="lesson"> -->
 <button ng-click="dayAlert({lesson:lesson, day:lessonDay})">Show lesson day</button>
 <!-- I need to insert a function that returns either 'checked' or '' based on whether or not it is crossed out... -->
-<input class="check" ng-click="strike({check:checked, lesson:lesson})" type="checkbox" name="" value="" ng-checked="checked" >
+<input class="check" ng-click="strike()" type="checkbox" name="" value="" ng-checked="lessonDay" >
+<button ng-click="removeLesson()" type="button" name="button">Delete {{lesson}}</button>
+</li>
